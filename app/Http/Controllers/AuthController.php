@@ -57,6 +57,7 @@ class AuthController extends Controller
 
     $response = [
         /*'user' => $user->with('wallet','fields')->first(),*/
+        'user_id' => $user->id,
         'token' => $token
     ];
 
