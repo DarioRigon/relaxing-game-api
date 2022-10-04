@@ -16,7 +16,7 @@ class FieldController extends Controller
      */
     public function index()
     {
-        return Field::all();
+        return auth()->user()->fields;
     }
 
     /**
