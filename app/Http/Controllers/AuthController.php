@@ -55,7 +55,7 @@ class AuthController extends Controller
     $token = $user->createtoken('relxgapp')->plainTextToken;
 
     $response = [
-        'user' => $user->with('wallet','fields')->get(),
+        'user' => $user->with('wallet','fields')->first(),
         'token' => $token
     ];
 
