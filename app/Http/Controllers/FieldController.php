@@ -16,7 +16,7 @@ class FieldController extends Controller
      */
     public function index()
     {
-        return auth()->user()->fields;
+        return auth()->user()->fields()->with('item')->get();
     }
 
     /**
