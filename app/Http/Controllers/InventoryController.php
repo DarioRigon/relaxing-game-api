@@ -36,7 +36,6 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
-        return "here we are";
 
         $data = $request->validate([
             'item_id'=>'integer'
@@ -73,8 +72,6 @@ class InventoryController extends Controller
             return response([
                 
             'message' => 'Item bought.',
-                
-            $user->inventories,
             
             'money' => [
                 'bills'=>$user->wallet->bills, 
