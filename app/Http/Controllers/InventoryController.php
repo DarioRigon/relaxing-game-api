@@ -36,12 +36,13 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
+        return "here we are";
 
         $data = $request->validate([
             'item_id'=>'integer'
         ]);
 
-        return $data;
+        
 
         $item = Item::find($data['item_id']);
 
