@@ -29,5 +29,5 @@ Route::get('/item/{item}', [ItemController::class, 'show']);
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::resource('fields', FieldController::class);
-    Route::resource('inventories', InventoryController::class);
+    Route::get('/inventory', [InventoryController::class,'index']);
 });
