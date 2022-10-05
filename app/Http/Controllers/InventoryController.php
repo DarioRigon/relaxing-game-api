@@ -36,12 +36,13 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
-
+        return response([
+            'message'=>'this is the post'
+        ]);
+        /*
         $data = $request->validate([
             'item_id'=>'integer'
         ]);
-
-        
 
         $item = Item::find($data['item_id']);
 
@@ -95,6 +96,7 @@ class InventoryController extends Controller
                 'euros'=> $user->wallet->euros
                 ]
         ], 200);
+        */
     }
 
     /**
