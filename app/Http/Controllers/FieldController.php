@@ -244,9 +244,9 @@ class FieldController extends Controller
      */
     public function destroy(Field $field)
     {
-        return [
+        return response([
             'exit'=> 0,
             'message'=>'Action denied'
-        ];
+        ], 401);
     }
 }

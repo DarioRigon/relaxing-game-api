@@ -15,7 +15,7 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        return auth()->user()->inventory();
+        return auth()->user()->inventories();
     }
 
     /**
