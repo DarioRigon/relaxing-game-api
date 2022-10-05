@@ -15,7 +15,7 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        return auth()->user()->inventories();
+        return auth()->user()->inventories;
     }
 
     /**
@@ -68,7 +68,7 @@ class InventoryController extends Controller
             }
 
             return response([
-
+                
             'message' => 'Item bought.',
                 
             $user->inventories,
