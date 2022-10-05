@@ -41,6 +41,8 @@ class InventoryController extends Controller
             'item_id'=>'integer'
         ]);
 
+        return $data;
+
         $item = Item::find($data['item_id']);
 
         $user = auth()->user();
