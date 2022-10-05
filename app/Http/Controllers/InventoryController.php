@@ -15,7 +15,11 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        return auth()->user()->inventories;
+        return response([
+            'message'=>'this is the get'
+        ]);
+
+        /*return auth()->user()->inventories;*/
     }
 
     /**
