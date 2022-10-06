@@ -65,14 +65,14 @@ class FieldController extends Controller
             return response(
                 [
                 'exit'=> 1,
-                'message' => 'Field bought.',
+                'message' => 'Terreno acquistato.',
                 $user->fields
                 ],201);
         }
 
         return response([
             'exit'=> 0,
-            'message' => 'Not enough money',
+            'message' => 'Non hai abbastanza crediti. ',
             'cost' => $cost,
             'currency' => $cname,
             'money' => [
@@ -127,7 +127,7 @@ class FieldController extends Controller
             if($field->item_id != null){
                 return response([
                     'exit'=> 0,
-                    'message'=>'Sorry. Field not empty',
+                    'message'=>'Spiacente. Il terreno non è vuoto.',
                 ]);
             }
 
@@ -142,7 +142,7 @@ class FieldController extends Controller
             if(!$inventory || !$inventory->amount){
                 return response([
                     'exit'=> 0,
-                    'message'=>'Item out of stock.'
+                    'message'=>'Oggetto esaurito.'
                 ]);
             }
 
@@ -156,7 +156,7 @@ class FieldController extends Controller
 
             return response([
                     'exit'=> 1,
-                    'message'=>'Item planted successfully',
+                    'message'=>'Oggetto piantato con successo.',
                     $field,
                 ]
             );
@@ -169,7 +169,7 @@ class FieldController extends Controller
             if(!$item){
                 return response([
                     'exit'=> 0,
-                    'message'=> 'You can\'t gain. Field is empty.'
+                    'message'=> 'Non puoi guadagnare. Il terreno è vuoto.'
                 ]);
             }
 
@@ -200,7 +200,7 @@ class FieldController extends Controller
 
                 return response([
                     'exit'=> 1,
-                    'message'=> 'You gained!',
+                    'message'=> 'Hai guadagnato',
                     'amount'=> $amountGained,
                     'currency'=> $currency,
                     'wallet_amount'=> $user->wallet->$currency,
@@ -210,7 +210,7 @@ class FieldController extends Controller
 
             return response([
                 'exit'=> 0,
-                'message'=> 'You can\'t gain. It didnt grow up yet.',
+                'message'=> 'Non puoi ancora guadagnare.',
                 'planted'=> $fieldBloomTime - $currentTime
             ]);
         }
@@ -227,7 +227,7 @@ class FieldController extends Controller
 
             return response([
                 'exit'=> 1,
-                'message'=> 'Item removed from field.',
+                'message'=> 'Oggetto rimosso dal terreno.',
                 'current_amount'=> $inventory->amount
             ]);
 
@@ -246,7 +246,7 @@ class FieldController extends Controller
     {
         return response([
             'exit'=> 0,
-            'message'=>'Action denied'
+            'message'=>'Azione non consentita.'
         ], 401);
     }
 }

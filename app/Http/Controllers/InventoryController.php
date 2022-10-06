@@ -23,16 +23,6 @@ class InventoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -40,10 +30,6 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
-        return response([
-            'message'=>'this is the post'
-        ]);
-        /*
         $data = $request->validate([
             'item_id'=>'integer'
         ]);
@@ -100,7 +86,6 @@ class InventoryController extends Controller
                 'euros'=> $user->wallet->euros
                 ]
         ], 200);
-        */
     }
 
     /**
@@ -110,17 +95,6 @@ class InventoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Inventory $inventory)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Inventory  $inventory
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Inventory $inventory)
     {
         //
     }
