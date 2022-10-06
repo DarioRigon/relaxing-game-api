@@ -25,7 +25,8 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/items', [ItemController::class, 'index']);
 Route::get('/item/{item}', [ItemController::class, 'show']);
 Route::get('/time', function(){
-    return new DateTime();
+    $time = new DateTime();
+    return response(['time'=> $time]);
 });
 
 //Protected routes
