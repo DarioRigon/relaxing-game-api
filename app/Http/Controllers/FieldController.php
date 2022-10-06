@@ -120,7 +120,16 @@ class FieldController extends Controller
         $data = $request->validate([
             'action'=>'string',
             'item_id'=>'integer|nullable'
-        ]);
+        ]); 
+
+        $fieldIsYours = $user->id == $field->user_id;
+
+        if(!$fieldIsYours){
+            return response ([
+                'exit'=>0,
+                'message'=>'Il terreno non è tuo.'
+            ]);
+        }
 
         if($data['action'] == 'plant'){
 

@@ -17,8 +17,8 @@ class CreateFieldsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('item_id')->nullable();
-            $table->time('time_to_bloom')->nullable(); //to be set when field is first planted
-            $table->time('gain_time')->nullable(); // to be reset everytime gain is taken, so it can sum up Es. I gain now. i set the time. Tomorrow i come back and i do roi x second * seconds passed since last gain.
+            $table->timestamp('time_to_bloom')->nullable(); //to be set when field is first planted
+            $table->timestamp('gain_time')->nullable(); // to be reset everytime gain is taken, so it can sum up Es. I gain now. i set the time. Tomorrow i come back and i do roi x second * seconds passed since last gain.
             $table->timestamps();
         });
     }
