@@ -38,7 +38,7 @@ class FieldController extends Controller
         //how much does the field cost?
         $cost = $fieldPrice->amount;
         //what kind of money do you need?
-        $cname = $FieldPrice->currency;
+        $cname = $fieldPrice->currency;
         //how much does the use have?
         $currency = $user->wallet->$cname;
 
