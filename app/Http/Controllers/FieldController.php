@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Field;
 use App\Models\Item;
+use App\Models\FieldPrice;
 use Illuminate\Http\Request;
 use DateTime;
 
@@ -32,7 +33,16 @@ class FieldController extends Controller
         $currency = null;
         $cname = null;
 
-        switch(true){
+        $fieldPrice = FieldPrice::Find($count);
+
+        //how much does the field cost?
+        $cost = $fieldPrice->amount;
+        //what kind of money do you need?
+        $cname = $FieldPrice->currency;
+        //how much does the use have?
+        $currency = $user->wallet->$cname;
+
+        /*switch(true){
             case $count > 0 && $count <= 25:
                 $currency = $user->wallet->bills;
                 $cost = $count * 350;
@@ -57,7 +67,7 @@ class FieldController extends Controller
                 $cname = 'euros';
             break;
                 
-        }
+        }*/
         
         if( $currency >= $cost){
             $user->fields()->create();
@@ -72,7 +82,7 @@ class FieldController extends Controller
 
         return response([
             'exit'=> 0,
-            'message' => 'Non hai abbastanza crediti. ',
+            'message' => 'Non hai abbastanza crediti.',
             'cost' => $cost,
             'currency' => $cname,
             'money' => [
