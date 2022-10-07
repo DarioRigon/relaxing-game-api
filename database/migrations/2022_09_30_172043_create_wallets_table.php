@@ -19,7 +19,7 @@ class CreateWalletsTable extends Migration
             $table->double('bills',10,2)->default(0);
             $table->double('stars',10,2)->default(0);
             $table->double('gems',10,2)->default(0);
-            $table->double('euros',10,2)->default(0);
+            $table->double('euro',10,2)->default(0);
             $table->timestamps();
         });
     }
