@@ -23,7 +23,7 @@ class AuthController extends Controller
         'password'=> bcrypt($fields['password'])
     ]);
 
-    $user->wallet()->create(['bills'=>500]);
+    $user->wallet()->create(['bills'=>0]);
     $user->fields()->create();
     $user->inventories()->create(['item_id'=>1, 'amount'=>2]);
 
