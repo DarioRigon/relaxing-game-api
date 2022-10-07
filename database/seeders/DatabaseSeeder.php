@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Item;
+use App\Models\FieldPrice;
 
 class DatabaseSeeder extends Seeder
 {
@@ -76,5 +77,38 @@ class DatabaseSeeder extends Seeder
     foreach($items as $item){
         Item::create($item);
     }
+
+    for($i = 0; $i < 100; $i++){
+        switch($i){
+            case $i == 0:
+                $cname = 'bills';
+                $cost = 0;
+                break;
+
+            case $i > 0 && $i <= 25:
+                $cost = $i * 350 + ($i*200);
+                $cname = 'bills';
+                break;
+
+            case $i > 25 && $i <= 50:
+                    $cost = $i * 450 + ($i*200);
+                    $cname = 'stars';
+                break;
+
+            case $i > 50 && $i <= 69:
+                    $cost = $i * 550 + ($i*200);
+                    $cname = 'gems';
+            break;
+
+            case $i > 70:
+                $cost = (0.5 * $i/50);
+                $cname = 'euro';
+            break;
+                
+        }
+        FieldPrice::create(['currency'=>"$cname",'amount'=>$cost]);
+    }
+
+
     }
 }

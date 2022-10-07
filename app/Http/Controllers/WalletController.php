@@ -10,7 +10,7 @@ class WalletController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Wallet  $wallet
+     * 
      * @return \Illuminate\Http\Response
      */
     public function show()
