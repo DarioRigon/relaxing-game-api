@@ -32,7 +32,7 @@ Route::get('/time', function(){
 //Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::post('/buy-item', [InventoryController::class,'store']);
     Route::resource('fields', FieldController::class);
-    Route::get('/inventory', [InventoryController::class,'index']);
+    Route::get('/wallet', FieldController::class,'show');
+    Route::resource('inventories', InventoryController::class);
 });
