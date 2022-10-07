@@ -25,6 +25,7 @@ class AuthController extends Controller
 
     $user->wallet()->create(['bills'=>500]);
     $user->fields()->create();
+    $user->inventories()->create(['item_id'=>1, 'amount'=>2]);
 
     $token = $user->createtoken('relxgapp')->plainTextToken;
 
