@@ -33,7 +33,7 @@ class FieldController extends Controller
         $currency = null;
         $cname = null;
 
-        $fieldPrice = FieldPrice::Find($count);
+        $fieldPrice = FieldPrice::Find($count+1);
 
         //how much does the field cost?
         $cost = $fieldPrice->amount;
