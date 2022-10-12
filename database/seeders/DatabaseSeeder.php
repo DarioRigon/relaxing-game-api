@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
                 'rarity'=>'common',
                 'cost'=> 100,
                 'cost_currency'=> 'bills',
-                'roi_per_second'=> 0.06,
+                'roi_per_second'=> 0.01,
                 'roi_currency'=> 'bills',
                 'time_to_bloom'=> 10
             ],
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
                 'rarity'=>'common',
                 'cost'=> 150,
                 'cost_currency'=> 'bills',
-                'roi_per_second'=> 0.08,
+                'roi_per_second'=> 0.02,
                 'roi_currency'=> 'bills',
                 'time_to_bloom'=> 20
             ],
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                 'rarity'=>'common',
                 'cost'=> 190,
                 'cost_currency'=> 'bills',
-                'roi_per_second'=> 0.1,
+                'roi_per_second'=> 0.03,
                 'roi_currency'=> 'bills',
                 'time_to_bloom'=> 45
             ],
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
                 'rarity'=>'common',
                 'cost'=> 350,
                 'cost_currency'=> 'bills',
-                'roi_per_second'=> 0.12,
+                'roi_per_second'=> 0.05,
                 'roi_currency'=> 'bills',
                 'time_to_bloom'=> 120
             ],
@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
                 'rarity'=>'common',
                 'cost'=> 500,
                 'cost_currency'=> 'bills',
-                'roi_per_second'=> 0.15,
+                'roi_per_second'=> 0.06,
                 'roi_currency'=> 'bills',
                 'time_to_bloom'=> 160
             ],

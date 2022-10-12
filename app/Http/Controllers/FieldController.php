@@ -76,6 +76,8 @@ class FieldController extends Controller
                 [
                 'exit'=> 1,
                 'message' => 'Terreno acquistato.',
+                'cost'=> $cost,
+                'currency'=>$cname,
                 $user->fields
                 ],201);
         }
