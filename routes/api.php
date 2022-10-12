@@ -6,6 +6,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WalletController;
 use App\Http\Controllers\FieldController;
+use App\Http\Controllers\FieldPriceController;
 use App\Http\Controllers\InventoryController;
 
 /*
@@ -23,6 +24,7 @@ use App\Http\Controllers\InventoryController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/items', [ItemController::class, 'index']);
+Route::get('/fields-price', [FieldPriceController::class, 'index']);
 Route::get('/item/{item}', [ItemController::class, 'show']);
 Route::get('/time', function(){
     $time = new DateTime();
