@@ -58,6 +58,8 @@ class InventoryController extends Controller
             }
 
             return response([
+
+            'exit'=>1,
                 
             'message' => 'Item bought.',
             
@@ -73,6 +75,9 @@ class InventoryController extends Controller
         }
 
         return response([
+
+            'exit'=>0,
+
             'message' => 'Not enough money',
             'cost' => $cost,
             'currency' => $cname,
