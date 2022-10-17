@@ -38,7 +38,8 @@ class DatabaseSeeder extends Seeder
                 'cost_currency'=> 'bills',
                 'roi_per_second'=> 0.02,
                 'roi_currency'=> 'bills',
-                'time_to_bloom'=> 200
+                'time_to_bloom'=> 200,
+                'image_url' => 'margherita',
             ],
             [
                 'name'=>'Rosa Bianca',
@@ -49,7 +50,8 @@ class DatabaseSeeder extends Seeder
                 'cost_currency'=> 'bills',
                 'roi_per_second'=> 0.03,
                 'roi_currency'=> 'bills',
-                'time_to_bloom'=> 800
+                'time_to_bloom'=> 800,
+                'image_url' => 'rosa_bianca',
             ],
             [
                 'name'=>'Rosa Rossa',
@@ -60,10 +62,11 @@ class DatabaseSeeder extends Seeder
                 'cost_currency'=> 'bills',
                 'roi_per_second'=> 0.05,
                 'roi_currency'=> 'bills',
-                'time_to_bloom'=> 2000
+                'time_to_bloom'=> 2000,
+                'image_url' => 'rosa_rossa',
             ],
             [
-                'name'=>'Giglio',
+                'name'=>'Giglio Bianco',
                 'description'=>'Il giglio è un genere di piante appartenente alla famiglia Liliaceae, diffuso in Europa, Asia e Nord America.',
                 'type'=>'flower',
                 'rarity'=>'common',
@@ -71,7 +74,32 @@ class DatabaseSeeder extends Seeder
                 'cost_currency'=> 'bills',
                 'roi_per_second'=> 0.06,
                 'roi_currency'=> 'bills',
-                'time_to_bloom'=> 4300
+                'time_to_bloom'=> 4300,
+                'image_url' => 'giglio_bianco',
+            ],
+            [
+                'name'=>'Giglio Rosa',
+                'description'=>'Il giglio è un genere di piante appartenente alla famiglia Liliaceae, diffuso in Europa, Asia e Nord America.',
+                'type'=>'flower',
+                'rarity'=>'common',
+                'cost'=> 18000,
+                'cost_currency'=> 'bills',
+                'roi_per_second'=> 0.07,
+                'roi_currency'=> 'bills',
+                'time_to_bloom'=> 6300,
+                'image_url' => 'giglio_rosa',
+            ],
+            [
+                'name'=>'Giglio Bicolor',
+                'description'=>'Il giglio è un genere di piante appartenente alla famiglia Liliaceae, diffuso in Europa, Asia e Nord America.',
+                'type'=>'flower',
+                'rarity'=>'common',
+                'cost'=> 23000,
+                'cost_currency'=> 'bills',
+                'roi_per_second'=> 0.08,
+                'roi_currency'=> 'bills',
+                'time_to_bloom'=> 7000,
+                'image_url' => 'giglio_bicolor',
             ],
         ];
 
