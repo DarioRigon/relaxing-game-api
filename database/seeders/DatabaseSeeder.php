@@ -26,7 +26,8 @@ class DatabaseSeeder extends Seeder
                 'cost_currency'=> 'bills',
                 'roi_per_second'=> 0.01,
                 'roi_currency'=> 'bills',
-                'time_to_bloom'=> 10
+                'time_to_bloom'=> 10,
+                'image_url' => 'primula',
             ],
             [
                 'name'=>'Margherita',
