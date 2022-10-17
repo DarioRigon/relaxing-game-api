@@ -35,6 +35,7 @@ Route::get('/time', function(){
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::resource('fields', FieldController::class);
+    Route::post('/gain-all', [FieldController::class, 'gainAll']);
     Route::post('/wallet', [WalletController::class,'show']);
     Route::resource('inventories', InventoryController::class);
 });

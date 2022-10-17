@@ -33,44 +33,44 @@ class DatabaseSeeder extends Seeder
                 'description'=>'La margherita è una pianta erbacea della famiglia delle Asteraceae, comunissima nei prati della penisola italiana.',
                 'type'=>'flower',
                 'rarity'=>'common',
-                'cost'=> 150,
+                'cost'=> 1500,
                 'cost_currency'=> 'bills',
                 'roi_per_second'=> 0.02,
                 'roi_currency'=> 'bills',
-                'time_to_bloom'=> 20
+                'time_to_bloom'=> 200
             ],
             [
                 'name'=>'Rosa Bianca',
                 'description'=>'La rosa è un genere della famiglia delle Rosacee che comprende circa 150 specie, originarie dell\'Europa e dell\'Asia.',
                 'type'=>'flower',
                 'rarity'=>'common',
-                'cost'=> 190,
+                'cost'=> 3900,
                 'cost_currency'=> 'bills',
                 'roi_per_second'=> 0.03,
                 'roi_currency'=> 'bills',
-                'time_to_bloom'=> 45
+                'time_to_bloom'=> 800
             ],
             [
                 'name'=>'Rosa Rossa',
                 'description'=>'La rosa è un genere della famiglia delle Rosacee che comprende circa 150 specie, originarie dell\'Europa e dell\'Asia.',
                 'type'=>'flower',
                 'rarity'=>'common',
-                'cost'=> 350,
+                'cost'=> 9000,
                 'cost_currency'=> 'bills',
                 'roi_per_second'=> 0.05,
                 'roi_currency'=> 'bills',
-                'time_to_bloom'=> 120
+                'time_to_bloom'=> 2000
             ],
             [
                 'name'=>'Giglio',
                 'description'=>'Il giglio è un genere di piante appartenente alla famiglia Liliaceae, diffuso in Europa, Asia e Nord America.',
                 'type'=>'flower',
                 'rarity'=>'common',
-                'cost'=> 500,
+                'cost'=> 15000,
                 'cost_currency'=> 'bills',
                 'roi_per_second'=> 0.06,
                 'roi_currency'=> 'bills',
-                'time_to_bloom'=> 160
+                'time_to_bloom'=> 4300
             ],
         ];
 
@@ -86,17 +86,17 @@ class DatabaseSeeder extends Seeder
                 break;
 
             case $i > 0 && $i <= 25:
-                $cost = $i * 350 + ($i*200);
+                $cost = $i * 3500 + ($i*600);
                 $cname = 'bills';
                 break;
 
             case $i > 25 && $i <= 50:
-                    $cost = $i * 450 + ($i*200);
+                    $cost = $i * 4500 + ($i*900);
                     $cname = 'stars';
                 break;
 
             case $i > 50 && $i <= 69:
-                    $cost = $i * 550 + ($i*200);
+                    $cost = $i * 5500 + ($i*1500);
                     $cname = 'gems';
             break;
 

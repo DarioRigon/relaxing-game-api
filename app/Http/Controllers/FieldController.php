@@ -20,6 +20,70 @@ class FieldController extends Controller
         return auth()->user()->fields;
     }
 
+    public function gainAll(){
+
+            $fields = auth()->user()->fields;
+
+            $responses = [];
+            
+
+            foreach($fields as $field){
+                $item = Item::find($field->item_id);
+                if(!$item){
+                    array_push($responses, [
+                        'exit'=> 0,
+                        'message'=> 'Non puoi guadagnare. Il terreno è vuoto.'
+                    ]);
+                    continue;
+                }
+
+                $fieldBloomTime = new DateTime($field->time_to_bloom);
+                $currentTime = new DateTime();
+
+                $hasBloom = $fieldBloomTime < $currentTime;
+
+                if($hasBloom){
+                
+                    //if it is the first time gaining
+                    if($field->gain_time == null){
+                        $field->gain_time = $field->time_to_bloom;
+                        $field->save();
+                    }
+    
+                    //let's gain some cash!
+                    $fieldGainTime = new DateTime($field->gain_time);
+                    $seconds = $currentTime->getTimestamp() - $fieldGainTime->getTimestamp();
+                    $amountGained = $item->roi_per_second * (double)$seconds;
+                    $currency = $item->roi_currency;
+                    $user->wallet->$currency = $user->wallet->$currency + $amountGained;
+                    $user->wallet->save();
+    
+                    //let's lock in the gain time
+                    $field->gain_time = $currentTime;
+                    $field->save();
+    
+                    array_push($responses, [
+                        'exit'=> 1,
+                        'message'=> 'Hai guadagnato',
+                        'amount'=> $amountGained,
+                        'currency'=> $currency,
+                        'wallet_amount'=> $user->wallet->$currency,
+                        'time'=> $seconds
+                    ]);
+                }
+    
+                array_push($responses,[
+                    'exit'=> 0,
+                    'message'=> 'Non puoi ancora guadagnare.',
+                    'planted'=> $fieldBloomTime - $currentTime
+                ]);
+
+
+            }
+
+            return response(['results' => $responses]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -235,6 +299,7 @@ class FieldController extends Controller
                 'planted'=> $fieldBloomTime - $currentTime
             ]);
         }
+
 
         if($data['action'] == 'remove'){
 
