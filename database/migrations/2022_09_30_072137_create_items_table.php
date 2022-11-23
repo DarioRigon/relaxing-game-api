@@ -24,6 +24,7 @@ class CreateItemsTable extends Migration
             $table->enum('cost_currency', array('bills', 'gems', 'stars','euro'));
             $table->double('roi_per_second',15,2);
             $table->enum('roi_currency', array('bills', 'gems', 'stars','euro'));
+            $table->integer('max_gain');
             $table->integer('time_to_bloom');
             $table->timestamps();
         });
