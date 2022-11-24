@@ -53,7 +53,14 @@ class FieldController extends Controller
                     //let's gain some cash!
                     $fieldGainTime = new DateTime($field->gain_time);
                     $seconds = $currentTime->getTimestamp() - $fieldGainTime->getTimestamp();
+
                     $amountGained = $item->roi_per_second * (double)$seconds;
+
+                    if($amountGained > (int)$item->max_gain){
+                        $amountGained = (int)$item->max_gain;
+                    }
+
+
                     $currency = $item->roi_currency;
                     $user->wallet->$currency = $user->wallet->$currency + $amountGained;
                     $user->wallet->save();
@@ -275,6 +282,12 @@ class FieldController extends Controller
                 $fieldGainTime = new DateTime($field->gain_time);
                 $seconds = $currentTime->getTimestamp() - $fieldGainTime->getTimestamp();
                 $amountGained = $item->roi_per_second * (double)$seconds;
+
+                //Let's limit the gain!
+                if($amountGained > (double)$item->max_gain){
+                    $amountGained = (double)$item->max_gain;
+                }
+
                 $currency = $item->roi_currency;
                 $user->wallet->$currency = $user->wallet->$currency + $amountGained;
                 $user->wallet->save();
